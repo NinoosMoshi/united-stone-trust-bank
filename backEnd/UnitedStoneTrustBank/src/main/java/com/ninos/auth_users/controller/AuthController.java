@@ -1,4 +1,4 @@
-package com.ninos.account.controller;
+package com.ninos.auth_users.controller;
 
 import com.ninos.auth_users.dto.LoginRequest;
 import com.ninos.auth_users.dto.LoginResponse;
