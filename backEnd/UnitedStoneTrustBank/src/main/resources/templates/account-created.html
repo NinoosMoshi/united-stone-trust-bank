@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your New Bank Account ✅</title>
+    <style>
+        /* ---------- Base ---------- */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #e8f5e9, #e3f2fd);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* ---------- Container ---------- */
+        .container {
+            background: #ffffff;
+            border-radius: 16px;
+            max-width: 520px;
+            width: 90%;
+            padding: 40px 35px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* ---------- Heading ---------- */
+        h2 {
+            color: #2e7d32;
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* ---------- Paragraphs ---------- */
+        p {
+            color: #444;
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        /* ---------- Account Details ---------- */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+     li {
+    background: #f9fbe7;
+    border: 1px solid #c5e1a5;
+    margin: 8px 0;
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #2e7d32;
+    display: flex;
+    align-items: center;
+}
+
+       li span {
+    margin-right: 8px; /* 👈 this creates the visual space */
+}
+
+li b {
+    color: #1b5e20;
+}
+        /* ---------- Button ---------- */
+        .btn {
+            display: block;
+            text-align: center;
+            background: #2e7d32;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin: 25px auto 10px;
+            width: fit-content;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #1b5e20;
+            transform: translateY(-2px);
+        }
+
+        /* ---------- Footer ---------- */
+        .footer {
+            margin-top: 30px;
+            font-size: 13px;
+            color: #777;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* ---------- Animation ---------- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Hello, <span th:text="${name}"></span> 👋</h2>
+    <p>Your <b><span th:text="${accountType}"></span></b> account has been successfully created 🎉</p>
+
+    <p><b>Account Details:</b></p>
+<!--    <ul>-->
+<!--        <li>Account Number: <b th:text="${accountNumber}"></b></li>-->
+<!--        <li>Account Type: <b th:text="${accountType}"></b></li> -->
+<!--        <li>Account Type: <b th:text="${accountType}"></b></li> -->
+<!--        <li>Currency: <b th:text="${currency}"></b></li>-->
+<!--    </ul>-->
+    <ul>
+        <li><span>Account Number:</span> <b th:text="${accountNumber}"></b></li>
+        <li><span>Account Type:</span> <b th:text="${accountType}"></b></li>
+        <li><span>Currency:</span> <b th:text="${currency}"></b></li>
+    </ul>
+
+    <a href="#" class="btn">Access Your Account</a>
+
+    <div class="footer">
+        © 2026 United Stone Trust Bank — Secure Banking Made Simple
+    </div>
+</div>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Your New Bank Account Number✅</title>-->
+<!--    <style>-->
+<!--        body { font-family: Arial, sans-serif; background: #f4f7fb; margin: 0; padding: 0; }-->
+<!--        .container { max-width: 600px; margin: 30px auto; background: #ffffff; border-radius: 8px;-->
+<!--                     padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }-->
+<!--        h2 { color: #2e7d32; text-align: center; }-->
+<!--        p { color: #333; line-height: 1.6; }-->
+<!--        ul { list-style: none; padding: 0; }-->
+<!--        li { background: #f1f1f1; margin: 5px 0; padding: 10px; border-radius: 5px; }-->
+<!--        .footer { margin-top: 30px; font-size: 13px; color: #777; text-align: center; }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <h2>Hello, <span th:text="${name}"></span> 👋</h2>-->
+<!--    <p>Your <b><span th:text="${accountType}"></span></b> account has been successfully created 🎉</p>-->
+
+<!--    <p><b>Account Details:</b></p>-->
+<!--    <ul>-->
+<!--        <li>Account Number: <b th:text="${accountNumber}"></b></li>-->
+<!--        <li>Account Type: <b th:text="${accountType}"></b></li>-->
+<!--        <li>Currency: <b th:text="${currency}"></b></li>-->
+<!--    </ul>-->
+
+<!--    <p>You can now log in and start using your account immediately.</p>-->
+
+<!--    <div class="footer">-->
+<!--        © 2026 United Stone Trust Bank| Secure Banking Made Simple-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
