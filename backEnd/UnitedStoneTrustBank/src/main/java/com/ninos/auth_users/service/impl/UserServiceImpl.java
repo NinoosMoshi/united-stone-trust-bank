@@ -5,6 +5,7 @@ import com.ninos.auth_users.dto.UserDTO;
 import com.ninos.auth_users.entity.User;
 import com.ninos.auth_users.repository.UserRepository;
 import com.ninos.auth_users.service.UserService;
+import com.ninos.aws.S3Service;
 import com.ninos.exceptions.BadRequestException;
 import com.ninos.exceptions.NotFoundException;
 import com.ninos.notification.dto.NotificationDTO;
@@ -40,6 +41,7 @@ public class UserServiceImpl implements UserService {
     private final NotificationService notificationService;
     private final PasswordEncoder passwordEncoder;
     private final ModelMapper modelMapper;
+    private final S3Service s3Service;
 
     // save images to backend folder
 //    private final String uploadDir = "uploads/profile-pictures/";
@@ -179,4 +181,34 @@ public class UserServiceImpl implements UserService {
         }
 
     }
+
+
+    @Override
+    public Response<?> uploadProfilePictureToS3(MultipartFile file) {
+
+        log.info("inside uploadProfilePictureToS3()");
+        User user = getCurrentLoggedInUser();
+
+        try {
+           if(user.getProfilePictureUrl() != null && !user.getProfilePictureUrl().isEmpty()){
+               s3Service.deleteFile(user.getProfilePictureUrl());
+           }
+           String s3Url = s3Service.uploadFile(file, "profile-pictures"); // https://ust-bank-bucket.s3.us-east-2.amazonaws.com/profile-pictures/3b655b75-5f27-404e-a995-071c4919d54f.jpg
+           log.info("profile url is: {}", s3Url);
+
+           user.setProfilePictureUrl(s3Url);
+           userRepository.save(user);
+
+           return Response.builder()
+                   .statusCode(HttpStatus.OK.value())
+                   .message("Profile picture uploaded successfully.")
+                   .data(s3Url)
+                   .build();
+
+        }catch (IOException e){
+           throw new RuntimeException(e.getMessage());
+        }
+
+    }
+
 }
