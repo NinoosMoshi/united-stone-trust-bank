@@ -42,10 +42,10 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
 
     // save images to backend folder
-    private final String uploadDir = "uploads/profile-pictures/";
+//    private final String uploadDir = "uploads/profile-pictures/";
 
     // save images to frontend folder
-//    private final String uploadDir = "C:/Users/ninoo/OneDrive/Desktop/bank-app(springboot-react)/frontEnd/trust-bank-ui/public/profile-picture/";
+    private final String uploadDir = "C:/Users/ninoo/OneDrive/Desktop/Bank-Application-new/frontEnd/unitedstonetrustbank-ui/public/profile-picture/";
 
 
     @Override
