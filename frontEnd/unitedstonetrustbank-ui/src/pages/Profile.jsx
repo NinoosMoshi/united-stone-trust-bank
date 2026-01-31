@@ -35,6 +35,8 @@ export default function Profile() {
         }
     }
 
+    
+
 
 
     const uploadProfilePictureFile = async (file) => {

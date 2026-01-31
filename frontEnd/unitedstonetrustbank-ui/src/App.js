@@ -10,6 +10,7 @@ import Profile from './pages/Profile';
 import UpdateProfile from './pages/UpdateProfile';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
+import Transactions from './pages/Transactions';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
 
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+
+        <Route path="/transactions" element={<Transactions />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
