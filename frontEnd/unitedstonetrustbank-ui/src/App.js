@@ -11,6 +11,8 @@ import UpdateProfile from './pages/UpdateProfile';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import Transactions from './pages/Transactions';
+import Transfer from './pages/Transfer';
+import AuditorDashboard from './pages/AuditorDashboard';
 
 function App() {
   return (
@@ -30,6 +32,9 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
 
         <Route path="/transactions" element={<Transactions />} />
+        <Route path="/transfer" element={<Transfer />} />
+
+        <Route path="/auditor-dashboard" element={<AuditorDashboard />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
