@@ -1,5 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { AuthService } from "../services";
+import AuthService from "../authService";
+
 
 
 export const CustomerRoute = ({ element: Component }) => {
